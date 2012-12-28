@@ -1,4 +1,4 @@
-function test(txt) {
+function jscalc(txt) {
 
  var lcd = document.getElementById('display');
   var numbs = lcd.value; 
