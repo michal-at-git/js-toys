@@ -1,0 +1,19 @@
+#js-calc {background: yellow;
+  width: 150px;
+  height: 200px;
+  border: solid #000 1px;
+  border-radius: 5px 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+#js-calc p {
+    text-align: center;
+    margin: 0;
+}
+#js-calc textarea {
+  margin: 0 auto;
+  background: #bbb;
+  width: 120px;
+  height: 30px;
+}
