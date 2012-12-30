@@ -1,12 +1,11 @@
-#js-calc {background: yellow;
-  width: 150px;
+#js-calc {background: #34ed4e;
+  width: 250px;
   height: 200px;
   border: solid #000 1px;
-  border-radius: 5px 5px;
+  border-radius: 9px 9px;
   padding: 10px;
   text-align: center;
 }
-
 #js-calc p {
     text-align: center;
     margin: 0;
@@ -14,6 +13,41 @@
 #js-calc textarea {
   margin: 0 auto;
   background: #bbb;
-  width: 120px;
+  width: 200px;
   height: 30px;
+  margin-bottom: 10px;
+  border: solid #000 1px;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 22px;
+}
+
+#js-calc .num {width: 130px;
+    display: table;
+    float: left;
+    margin-left: 10px;
+}
+#js-calc .num input, #js-calc .num input:active, #js-calc .oth input, #js-calc .oth input:active {width: 30px;
+    height: 30px;
+    margin: 3px;
+    color: #fff;
+    font-weight: bold;
+     font-family: Arial, sans-serif;
+     font-size: 18px;
+      border: solid #fff 1px;
+     border-radius: 5px 5px;
+     box-shadow: #000 0px 0px 5px 1px;
+}
+
+#js-calc .num input   {  
+ background: #000; 
+}
+
+#js-calc .oth {width: 90px;
+  display: table;
+  float: right;
+  margin-right: 10px;
+}
+
+#js-calc .oth input {
+    background: #6b6b6b;
 }
