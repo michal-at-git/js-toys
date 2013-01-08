@@ -1,0 +1,18 @@
+.js-checkers {border: solid #000 2px;
+    width: 240px;
+    display: table;
+    box-shadow: 0px 0px 7px 0px #000;
+}
+.js-checkers p input {width: 30px;
+  height:30px;
+  margin: 0px;
+  float: left;
+  border: 0px;
+  color: #fff;
+  font-size: 20px;
+}
+.js-checkers p {width: 240px;
+margin: 0px;
+}
+.js-checkers .black {background: #000;}
+.js-checkers .white {background: #fff;}
