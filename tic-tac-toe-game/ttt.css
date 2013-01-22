@@ -1,7 +1,10 @@
 .tttgame {width: 93px;
-    height: 300px; display: table;} 
+    height: 300px; display: table;
+    text-align: center;
+    line-height: 30px;
+} 
 
-.tttgame #a, .tttgame #b, .tttgame #c, .tttgame #d, .tttgame #e , .tttgame #f, .tttgame #g,  .tttgame #h,    .tttgame #i{
+.tttgame #a, .tttgame #b, .tttgame #c, .tttgame #d, .tttgame #e , .tttgame #f, .tttgame #g,  .tttgame #h, .tttgame #i{
   float: left;
   width: 30px;
  height: 30px;
