@@ -1,15 +1,25 @@
-.tttgame {width: 93px;
-    height: 300px; display: table;
+.tttgame {width: 160px;
+    height: 160px; display: table;
     text-align: center;
-    line-height: 30px;
+    line-height: 50px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 27px;
+    color: #000;
+    font-weight: bold;
+    background: #fff;
+    box-shadow: #dcc 0px 0px 7px 3px;
 } 
 
 .tttgame #a, .tttgame #b, .tttgame #c, .tttgame #d, .tttgame #e , .tttgame #f, .tttgame #g,  .tttgame #h, .tttgame #i{
   float: left;
-  width: 30px;
- height: 30px;
- border-bottom: solid #000 1px; 
- border-left: solid #000 1px;
-
+  width: 50px;
+ height: 50px;
  
+}
+.tttgame #a, .tttgame #b,  .tttgame #d, .tttgame #e , .tttgame #g,  .tttgame #h {
+   border-right: solid #000 5px;
+
+}
+.tttgame #a, .tttgame #b, .tttgame #c, .tttgame #d, .tttgame #e , .tttgame #f {
+   border-bottom: solid #000 5px;
 }

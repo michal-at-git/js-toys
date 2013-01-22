@@ -1,6 +1,8 @@
  var run = 0;
 var a, b, c, d, e, f, g, h, i;
 function move(mv){
+if (!checkmv(mv))
+{  
   if (run == 0)
   { 
     result(mv, "X");
@@ -8,6 +10,7 @@ function move(mv){
   
   run=1;
   resultmap("X");
+
   }
    else if (run == 1)
   {
@@ -17,13 +20,12 @@ function move(mv){
   resultmap("O");
   }
 }
+else alert("Bad move!");
+}
 
 function result(mv, value) {
- if (mv == "a") {
-  a=value;
-   
-  }
-  else if (mv == "a") {
+ 
+  if (mv == "a") {
   a=value;
    
   }
@@ -108,4 +110,17 @@ function resultmap(player) {
       alert(player+" wins!"); 
       run = 2;
     }
+}
+
+function checkmv(mv){
+if (mv == "a") return a;
+else if (mv == "b") return b;
+else if (mv == "c") return c;
+else if (mv == "d") return d;
+else if (mv == "e") return e;
+else if (mv == "f") return f;
+else if (mv == "g") return g;
+else if (mv == "h") return h;
+else if (mv == "i") return i;
+else return false;
 }
