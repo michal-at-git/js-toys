@@ -1,0 +1,12 @@
+.tttgame {width: 93px;
+    height: 300px; display: table;} 
+
+.tttgame #a, .tttgame #b, .tttgame #c, .tttgame #d, .tttgame #e , .tttgame #f, .tttgame #g,  .tttgame #h,    .tttgame #i{
+  float: left;
+  width: 30px;
+ height: 30px;
+ border-bottom: solid #000 1px; 
+ border-left: solid #000 1px;
+
+ 
+}
