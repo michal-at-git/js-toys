@@ -66,47 +66,50 @@ function result(mv, value) {
 function resultmap(player) {
    if (a == player && b == player && c == player)
     {
+      setwinpt("a","b","c");
       alert(player+" wins!"); 
             run = 2;
-
     }
     else if (a == player && d == player && g == player)
        {
+      setwinpt("a","d","g");
       alert(player+" wins!") ; 
           run = 2;
-
     }
      else if (a == player && e == player && i == player)
        {
+      setwinpt("a","e","i");
       alert(player+" wins!"); 
            run = 2;
-
     }
     else if (d == player && e == player && f == player)
        {
+      setwinpt("d","e","f");
       alert(player+" wins!"); 
           run = 2;
     }
      else if (g == player && h == player && i == player)
        {
-      alert(player+" wins!"); 
+       setwinpt("g","h","i");
+	alert(player+" wins!"); 
            run = 2;
-
-    }
+  }
      else if (b == player && e == player && h == player)
        {
+      setwinpt("b","e","h");
       alert(player+" wins!"); 
            run = 2;
-
     }
      else if (c == player && f == player && i == player)
        {
-      alert(player+" wins!"); 
+	    setwinpt("c","f","i");
+	    alert(player+" wins!"); 
            run = 2;
 
     }
     else if (c == player && e == player && g == player)
        {
+      setwinpt("c","e","g");
       alert(player+" wins!"); 
       run = 2;
     }
@@ -123,4 +126,10 @@ else if (mv == "g") return g;
 else if (mv == "h") return h;
 else if (mv == "i") return i;
 else return false;
+}
+
+function setwinpt(one, two, three) {
+  document.getElementById(one).style.backgroundColor="red";
+  document.getElementById(two).style.backgroundColor="red";
+  document.getElementById(three).style.backgroundColor="red";
 }
