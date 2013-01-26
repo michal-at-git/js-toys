@@ -4,92 +4,90 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="js-checkers.css" />
   <script src="js-checkers.js"></script>
+ 
 </head>
 
 <body>
-<div class="js-checkers">
-<form>
-<p>
-  <input type="button" value="&#x25cb;" class="black" onclick="checkers('a1')" />
-  <input type="button" value="" class="white" onclick="checkers('a2')" />
-  <input type="button" value="" class="black" onclick="checkers('a3')" />
-  <input type="button" value="" class="white" onclick="checkers('a4')" />
-  <input type="button" value="" class="black" onclick="checkers('a5')" />
-  <input type="button" value="" class="white" onclick="checkers('a6')" />
-  <input type="button" value="" class="black" onclick="checkers('a7')" />
-  <input type="button" value="" class="white" onclick="checkers('a8')" />
-</p>
-<p>
-  <input type="button" value="" class="white" onclick="checkers('b1')" />
-  <input type="button" value="" class="black" onclick="checkers('b2')" />
-  <input type="button" value="" class="white" onclick="checkers('b3')" />
-  <input type="button" value="" class="black" onclick="checkers('b4')" />
-  <input type="button" value="" class="white" onclick="checkers('b5')" />
-  <input type="button" value="" class="black" onclick="checkers('b6')" />
-  <input type="button" value="" class="white" onclick="checkers('b7')" />
-  <input type="button" value="" class="black" onclick="checkers('b8')" />
-</p>
-<p>
-  <input type="button" value="" class="black" onclick="checkers('c1')" />
-  <input type="button" value="" class="white" onclick="checkers('c2')" />
-  <input type="button" value="" class="black" onclick="checkers('c3')" />
-  <input type="button" value="" class="white" onclick="checkers('c4')" />
-  <input type="button" value="" class="black" onclick="checkers('c5')" />
-  <input type="button" value="" class="white" onclick="checkers('c6')" />
-  <input type="button" value="" class="black" onclick="checkers('c7')" />
-  <input type="button" value="" class="white" onclick="checkers('c8')" />
-</p>
-<p>
-  <input type="button" value="" class="white" onclick="checkers('d1')" />
-  <input type="button" value="" class="black" onclick="checkers('d2')" />
-  <input type="button" value="" class="white" onclick="checkers('d3')" />
-  <input type="button" value="" class="black" onclick="checkers('d4')" />
-  <input type="button" value="" class="white" onclick="checkers('d5')" />
-  <input type="button" value="" class="black" onclick="checkers('d6')" />
-  <input type="button" value="" class="white" onclick="checkers('d7')" />
-  <input type="button" value="" class="black" onclick="checkers('d8')" />
-</p>
-<p>
-  <input type="button" value="" class="black" onclick="checkers('d1')" />
-  <input type="button" value="" class="white" onclick="checkers('d2')" />
-  <input type="button" value="" class="black" onclick="checkers('d3')" />
-  <input type="button" value="" class="white" onclick="checkers('d4')" />
-  <input type="button" value="" class="black" onclick="checkers('d5')" />
-  <input type="button" value="" class="white" onclick="checkers('d6')" />
-  <input type="button" value="" class="black" onclick="checkers('d7')" />
-  <input type="button" value="" class="white" onclick="checkers('d8')" />
-</p>
-<p>
-  <input type="button" value="" class="white" onclick="checkers('e1')" />
-  <input type="button" value="" class="black" onclick="checkers('e2')" />
-  <input type="button" value="" class="white" onclick="checkers('e3')" />
-  <input type="button" value="" class="black" onclick="checkers('e4')" />
-  <input type="button" value="" class="white" onclick="checkers('e5')" />
-  <input type="button" value="" class="black" onclick="checkers('e6')" />
-  <input type="button" value="" class="white" onclick="checkers('e7')" />
-  <input type="button" value="" class="black" onclick="checkers('e8')" />
-</p>
-<p>
-  <input type="button" value="" class="black" onclick="checkers('f1')" />
-  <input type="button" value="" class="white" onclick="checkers('f2')" />
-  <input type="button" value="" class="black" onclick="checkers('f3')" />
-  <input type="button" value="" class="white" onclick="checkers('f4')" />
-  <input type="button" value="" class="black" onclick="checkers('f5')" />
-  <input type="button" value="" class="white" onclick="checkers('f6')" />
-  <input type="button" value="" class="black" onclick="checkers('f7')" />
-  <input type="button" value="" class="white" onclick="checkers('f8')" />
-</p>
-<p>
-  <input type="button" value="" class="white" onclick="checkers('g1')" />
-  <input type="button" value="" class="black" onclick="checkers('g2')" />
-  <input type="button" value="" class="white" onclick="checkers('g3')" />
-  <input type="button" value="" class="black" onclick="checkers('g4')" />
-  <input type="button" value="" class="white" onclick="checkers('g5')" />
-  <input type="button" value="" class="black" onclick="checkers('g6')" />
-  <input type="button" value="" class="white" onclick="checkers('g7')" />
-  <input type="button" value="&#x25cf;" class="black" onclick="checkers('g8')" />
-</p>
-</form>
+<div class="js-checkers" >
+<!-- line 4 -->
+  <div class="white" onclick="checkers('a8')" id="ah" > </div>
+  <div class="black" onclick="checkers('b8')" id="bh" > </div>
+  <div class="white" onclick="checkers('c8')" id="ch" > </div>
+  <div class="black" onclick="checkers('d8')" id="dh" > </div>
+  <div class="white" onclick="checkers('e8')" id="eh" > </div>
+  <div class="black" onclick="checkers('f8')" id="fh" > </div>
+  <div class="white" onclick="checkers('g8')" id="gh" > </div>
+  <div class="black" onclick="checkers('h8')" id="hh" > </div>
+  <!-- line 3 -->
+
+  <div class="black" onclick="checkers('a7')" id="ag" > </div>
+  <div class="white" onclick="checkers('b7')" id="bg" > </div>
+  <div class="black" onclick="checkers('c7')" id="cg" > </div>
+  <div class="white" onclick="checkers('d7')" id="dg" > </div>
+  <div class="black" onclick="checkers('e7')" id="eg" > </div>
+  <div class="white" onclick="checkers('f7')" id="fg" > </div>
+  <div class="black" onclick="checkers('g7')" id="gg" > </div>
+  <div class="white" onclick="checkers('h7')" id="hg" > </div>
+
+  <!-- line 6 -->
+  <div class="white" onclick="checkers('a6')" id="af" > </div>
+  <div class="black" onclick="checkers('b6')" id="bf" > </div>
+  <div class="white" onclick="checkers('c6')" id="cf" > </div>
+  <div class="black" onclick="checkers('d6')" id="df" > </div>
+  <div class="white" onclick="checkers('e6')" id="ef" > </div>
+  <div class="black" onclick="checkers('f6')" id="ff" > </div>
+  <div class="white" onclick="checkers('g6')" id="gf" > </div>
+  <div class="black" onclick="checkers('h6')" id="hf" > </div>
+<!-- line 5 -->
+  <div class="black" onclick="checkers('a5')" id="ae" > </div>
+  <div class="white" onclick="checkers('b5')" id="be" > </div>
+  <div class="black" onclick="checkers('c5')" id="ce" > </div>
+  <div class="white" onclick="checkers('d5')" id="de" > </div>
+  <div class="black" onclick="checkers('e5')" id="ee" > </div>
+  <div class="white" onclick="checkers('f5')" id="fe" > </div>
+  <div class="black" onclick="checkers('g5')" id="ge" > </div>
+  <div class="white" onclick="checkers('h5')" id="he" > </div>
+<!-- line 4 -->
+  <div class="white" onclick="checkers('a4')" id="ad" > </div>
+  <div class="black" onclick="checkers('b4')" id="bd" > </div>
+  <div class="white" onclick="checkers('c4')" id="cd" > </div>
+  <div class="black" onclick="checkers('d4')" id="dd" > </div>
+  <div class="white" onclick="checkers('e4')" id="ed" > </div>
+  <div class="black" onclick="checkers('f4')" id="fd" > </div>
+  <div class="white" onclick="checkers('g4')" id="gd" > </div>
+  <div class="black" onclick="checkers('h4')" id="hd" > </div>
+  <!-- line 3 -->
+
+  <div class="black" onclick="checkers('a3')" id="ac" > </div>
+  <div class="white" onclick="checkers('b3')" id="bc" > </div>
+  <div class="black" onclick="checkers('c3')" id="cc" > </div>
+  <div class="white" onclick="checkers('d3')" id="dc" > </div>
+  <div class="black" onclick="checkers('e3')" id="ec" > </div>
+  <div class="white" onclick="checkers('f3')" id="fc" > </div>
+  <div class="black" onclick="checkers('g3')" id="gc" > </div>
+  <div class="white" onclick="checkers('h3')" id="hc" > </div>
+
+  <!-- line 2 -->
+  <div class="white" onclick="checkers('a2')" id="ab" > </div>
+  <div class="black" onclick="checkers('b2')" id="bb" > </div>
+  <div class="white" onclick="checkers('c2')" id="cb" > </div>
+  <div class="black" onclick="checkers('d2')" id="db" > </div>
+  <div class="white" onclick="checkers('e2')" id="eb" > </div>
+  <div class="black" onclick="checkers('f2')" id="fb" > </div>
+  <div class="white" onclick="checkers('g2')" id="gb" > </div>
+  <div class="black" onclick="checkers('h2')" id="hb" > </div>
+  <!--line 1-->
+  <div class="black" onclick="checkers('a1')" id="aa" ></div>
+  <div class="white" onclick="checkers('b1')" id="ba" > </div>
+  <div class="black" onclick="checkers('c1')" id="ca" > </div>
+  <div class="white" onclick="checkers('d1')" id="da" > </div>
+  <div class="black" onclick="checkers('e1')" id="ea" > </div>
+  <div class="white" onclick="checkers('f1')" id="fa" > </div>
+  <div class="black" onclick="checkers('g1')" id="ga" > </div>
+  <div class="white" onclick="checkers('h1')" id="ha" > </div>
+<script>
+    start();
+</script>
 </div>
 
 </body>

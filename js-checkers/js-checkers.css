@@ -11,8 +11,24 @@
   color: #fff;
   font-size: 20px;
 }
-.js-checkers p {width: 240px;
+.js-checkers  {width: 240px;
 margin: 0px;
+color: red;
+line-height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+
 }
-.js-checkers .black {background: #000;}
-.js-checkers .white {background: #fff;}
+.js-checkers .black {background: #000;
+    width: 30px;
+    height: 30px;
+    float: left;
+    cursor: pointer;
+}
+.js-checkers .white {background: #fff;
+   width: 30px;
+    height: 30px;
+    float: left;
+    
+}
