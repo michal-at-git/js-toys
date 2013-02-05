@@ -19,7 +19,7 @@ function start() {
   var i = 0;
   while (i < 8)
   { position[i] = "white";
-    position[32-i] = "black"; 
+    position[31-i] = "black"; 
 
  document.getElementById(white[i]).innerHTML = "&#x25cf;";
  document.getElementById(black[i]).innerHTML = "&#x25cb;";
@@ -30,36 +30,33 @@ function start() {
 var move = 0;
 var _in = 0;
 var _out = 0;
+var i = 0, j = 0;
+
 function checkers(inpt)
 { 
-var i = 0, j = 0;
  if (move == 0) {
    while (board[i] != inpt) {
      ++i;
    }
- 
    move = 1;
-  
  }
  
  else { 
    while (board[j] != inpt) {
      ++j;
    }
-   
    position[j] = position[i];
    position[i] = null;
    refresh();
  move = 0;
- 
-
+  i = 0, j = 0;
  }
  return 0;
 }
 
 function refresh() {
   var i;
-  for (i = 0; i < 32; ++i)
+  for (i = 0; i < 32; i++)
   {
     if (position[i] == "white")
        document.getElementById(board[i]).innerHTML = "&#x25cf;";
