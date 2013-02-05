@@ -2,6 +2,15 @@ var position = [ /*aa*/null, /*ca*/ null, /*ea*/ null,/*ga*/ null, /*bb*/null, /
   /*ac*/null, /*cc*/null, /*ec*/null, /*gc*/null, /*bd*/null, /*dd*/null, /*fd*/null, 
   /*hd*/null, null, null, null, null, null, null,
   null, null, null, null, null, null, null, null, null, null];
+  var board = ['aa', 'ca', 'ea', 'ga', 
+	      'bb', 'db', 'fb', 'hb',
+	      'ac', 'cc', 'ec', 'gc', 
+	      'bd', 'ed', 'fd', 'hd', 
+	      'ae', 'ce', 'ee', 'ge', 
+	      'bf', 'df', 'ff', 'hf', 
+	      'ag', 'cg', 'eg', 'gg',
+	      'bh', 'dh', 'fh', 'hh',
+	     ]
 function start() {
   var white = ['aa', 'ca', 'ea', 'ga', 'bb', 'db', 'fb', 'hb'];
   var black = ['bh', 'dh', 'fh', 'hh','ag', 'cg', 'eg', 'gg'];
@@ -19,25 +28,48 @@ function start() {
   }
 }
 var move = 0;
-var in = 0;
-var out = 0;
+var _in = 0;
+var _out = 0;
 function checkers(inpt)
 { 
-
+var i = 0, j = 0;
  if (move == 0) {
-   
-   var in = inpt;
+   while (board[i] != inpt) {
+     ++i;
+   }
+ 
    move = 1;
+  
  }
  
  else { 
+   while (board[j] != inpt) {
+     ++j;
+   }
+   
+   position[j] = position[i];
+   position[i] = null;
+   refresh();
  move = 0;
- var out = inpt;
- position[out] =  position[in];
-  position[in] = null;
+ 
 
  }
  return 0;
+}
+
+function refresh() {
+  var i;
+  for (i = 0; i < 32; ++i)
+  {
+    if (position[i] == "white")
+       document.getElementById(board[i]).innerHTML = "&#x25cf;";
+    else if (position[i] == "black")
+    {
+       document.getElementById(board[i]).innerHTML = "&#x25cb;";
+    }
+    else  document.getElementById(board[i]).innerHTML = "";
+  }
+ 
 }
 /*
 function move (from, cell) {
