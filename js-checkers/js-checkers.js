@@ -5,7 +5,7 @@ var position = [ /*aa*/null, /*ca*/ null, /*ea*/ null,/*ga*/ null, /*bb*/null, /
   var board = ['aa', 'ca', 'ea', 'ga', 
 	      'bb', 'db', 'fb', 'hb',
 	      'ac', 'cc', 'ec', 'gc', 
-	      'bd', 'ed', 'fd', 'hd', 
+	      'bd', 'dd', 'fd', 'hd', 
 	      'ae', 'ce', 'ee', 'ge', 
 	      'bf', 'df', 'ff', 'hf', 
 	      'ag', 'cg', 'eg', 'gg',
@@ -34,23 +34,35 @@ var i = 0, j = 0;
 
 function checkers(inpt)
 { 
+ 
  if (move == 0) {
    while (board[i] != inpt) {
      ++i;
    }
-   move = 1;
+   if (position[i]) move = 1;
+   else {
+     move = 0
+    i = 0, j = 0;
+    }
  }
  
  else { 
    while (board[j] != inpt) {
      ++j;
    }
+   
+  if (rules(i,j, position[i]))
+  {
    position[j] = position[i];
    position[i] = null;
    refresh();
- move = 0;
+  }
+ 
+  move = 0;
   i = 0, j = 0;
+   
  }
+ //alert(move);
  return 0;
 }
 
@@ -66,8 +78,24 @@ function refresh() {
     }
     else  document.getElementById(board[i]).innerHTML = "";
   }
- 
 }
+
+function rules(i, j, pawn) {
+  if (pawn == "white")
+  {
+ if (i>j) return false;
+ else if (i == j) return false;
+ else return true; 
+  }
+  else if (pawn == "black")
+  {
+    if (i<j) return false;
+ else if (i == j) return false;
+ else return true; 
+  }
+}
+
+
 /*
 function move (from, cell) {
   if (from 
