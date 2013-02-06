@@ -37,11 +37,11 @@ function checkers(inpt)
    }
    if (position[i]){
      move = 1;
-     hilight(board[i], move);
+     highlight(board[i], move);
     }
    else {
-     move = 0;     
-      i = 0, j = 0;
+     move = 0;   
+     i = 0;
     }
 
  }
@@ -55,13 +55,15 @@ function checkers(inpt)
   {
    position[j] = position[i];
    position[i] = null;
-   refresh();
    move = 0;
-   hilight(board[i], move);
-  }
-  
-
+   highlight(board[i], move);
+   refresh();
   i = 0, j = 0;
+
+  }
+  else move = 1; 
+  //i = 0, j = 0;
+
    
  }
  return 0;
@@ -81,7 +83,7 @@ function refresh() {
   }
 }
 
-function hilight(board, move)
+function highlight(board, move)
  {
  if (move == 1)
  {
