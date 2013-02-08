@@ -38,41 +38,52 @@ function checkers(inpt)
 { 
  
  if (move == 0) {
+   alert("move == 0"); /////////////////////////
    while (board[i] != inpt) {
      ++i;
    }
    if (position[i]){
      move = 1;
-     highlight(board[i], move);
+   highlight(board[i], move);
     }
    else {
+     alert("bad move!");
      move = 0;   
      i = 0;
     }
 
  }
  
- else { 
-   while (board[j] != inpt) {
-     ++j;
-   }
+ else 
+ {
+    while (board[j] != inpt)
+    {
+      ++j;
+    }
    
-  if ((mv(i, j, position[i])))//test imp of mv()!!!
-  {
-   alert("true");
-   position[j] = position[i];
-   position[i] = null;
-   move = 0;
-   highlight(board[i], move);
-   refresh();
-  i = 0, j = 0;
+    if (mv(i, j, position[i]))//test imp of mv()!!!
+    {  
+      alert("move == 1:   if (mv(i, j, position[i]))"); /////////////////////////
+
+      position[j] = position[i];
+      position[i] = null;
+      highlight(board[i], 0);
+      refresh();
+      i = 0, j = 0;
+      move = 0;
 
   }
-  else move = 1; 
-  //i = 0, j = 0;
+   else
+   {
+           alert("move == 1:   else move = 1"); /////////////////////////
+	  move = 0; 
+	  highlight(board[i], move);
+	  j = 0;
+   }
+ }
 
    
- }
+ 
  return 0;
 }
 
@@ -159,16 +170,16 @@ else if (pawn == "black")
 
 
 function refresh() {
-  var i;
-  for (i = 0; i < 32; i++)
+  var x;
+  for (x = 0; x < 32; x++)
   {
-    if (position[i] == "white")
-       document.getElementById(board[i]).innerHTML = "&#x25cf;";
-    else if (position[i] == "black")
+    if (position[x] == "white")
+       document.getElementById(board[x]).innerHTML = "&#x25cf;";
+    else if (position[x] == "black")
     {
-       document.getElementById(board[i]).innerHTML = "&#x25cb;";
+       document.getElementById(board[x]).innerHTML = "&#x25cb;";
     }
-    else  document.getElementById(board[i]).innerHTML = "";
+    else  document.getElementById(board[x]).innerHTML = "";
   }
 }
 
