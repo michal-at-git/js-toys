@@ -51,7 +51,8 @@ function checkers(inpt)
      ++j;
    }
    
-  if (rules(i,j, position[i]))
+  if (rules(i,j, position[i]) && mv(i, j))//test imp of mv()!!!
+ 
   {
    position[j] = position[i];
    position[i] = null;
@@ -116,4 +117,44 @@ function rules(i, j, pawn) {
  else if (i == j) return false;
  else return true; 
   }
+}
+
+//will be renamed to move()! conflict with wariable name ;P
+function mv(from, to) {
+ //lines
+ from += 1;
+ to += 1;
+ var res = 0;
+ var line = []
+ line[0] = [1,2,3,4];
+ line[1] = [5,6,7,8];
+ line[2] = [9,10,11,12];
+ line[3] = [13,14,15,16];
+ line[4] = [17,18,19,20];
+ line[5] = [21,22,23,24];
+ line[6] = [25,26,27,28];
+ line[7] = [29,30,31,32];
+
+ for (x = 0; x <= 7; x++)
+ {
+   for (y = 0; y <= 6; y++)
+   { 
+      if ((from == line[x][y]) && (to == line[x+1][y]))  
+      {
+	alert("legal move");
+
+	x = 7;
+	res = 1;
+      }
+      else if ((from == line[x][y+1]) && (to == line[x+1][y])) // not finished & not good
+	{
+	  alert("legal move");
+	  x = 7;
+	  res = 1;
+	}
+
+   }
+ }
+
+ return res;
 }
