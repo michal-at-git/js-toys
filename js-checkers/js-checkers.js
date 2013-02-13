@@ -121,7 +121,13 @@ if (pawn == "white")
 	x = 7;
 	res = true;
       }
-      else if ((from == line[x][y+1]) && (to == line[x+1][y])) // not finished & not good
+      else if ((x%2) != 0 && (from == line[x][y]) && (to == line[x+1][y+1])) // not finished & not good
+	{
+	  alert("legal move");
+	  x = 7;
+	  res = true;
+	}
+	else if ((x%2) == 0 && (from == line[x][y]) && (to == line[x+1][y-1])) // not finished & not good
 	{
 	  alert("legal move");
 	  x = 7;
@@ -145,7 +151,13 @@ else if (pawn == "black")
 	x = 0;
 	res = true;
       }
-      else if ((from == line[x][y-1]) && (to == line[x-1][y])) // UNSTABLE - NOT WORKING
+      else if ((x%2) == 0 && (from == line[x][y]) && (to == line[x-1][y-1])) // UNSTABLE - NOT WORKING
+	{
+	  alert("legal move");
+	  x = 0;
+	  res = true;
+	}
+	else if ((x%2) != 0 && (from == line[x][y]) && (to == line[x-1][y+1])) // UNSTABLE - NOT WORKING
 	{
 	  alert("legal move");
 	  x = 0;
