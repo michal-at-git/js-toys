@@ -112,7 +112,7 @@ function mv(from, to, pawn) {
 if (pawn == "white") 
  for (x = 0; x <= 7; x++)
  {
-   for (y = 0; y <= 6; y++)
+   for (y = 0; y <= 3; y++) // it was  (y = 0; y <= 6; y++) - correct to 3 because table has only 4 elements
    { 
       if ((from == line[x][y]) && (to == line[x+1][y]))  
       {
@@ -142,7 +142,7 @@ else if (pawn == "black")
   for (x = 7; x >= 0; x--)
  {
   
-   for (y = 6; y >= 1; y--)
+   for (y = 3; y >= 0; y--) // it was  (; y <= 6; ) - correct to 3 because table has only 4 elements
    { 
       if ((from == line[x][y]) && (to == line[x-1][y]))  
       {
@@ -219,8 +219,9 @@ function highlight(board, move)
  
 
  function kill(player, from, to) {
-   var opponent = 0;
    var res;
+   var x;
+   var y;
     var line = []
  line[0] = [1,2,3,4];
  line[1] = [5,6,7,8];
@@ -231,9 +232,19 @@ function highlight(board, move)
  line[6] = [25,26,27,28];
  line[7] = [29,30,31,32];
 
+ var opponent = position[to];
+alert(to);
  
  if (player == "white" && opponent == "black")
  {
+//   for(x = 0; x<= 7; x++)
+//   {
+//    for(y = 0; y <= 3; y++)
+//    {
+//      
+//    }
+//   }
+    
   alert("legal kill");
   res = true;
  }
