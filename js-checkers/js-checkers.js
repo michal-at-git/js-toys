@@ -133,7 +133,7 @@ if (pawn == "white")
 	  x = 7;
 	  res = true;
 	}
-
+	
    }
  }
  
@@ -163,10 +163,12 @@ else if (pawn == "black")
 	  x = 0;
 	  res = true;
 	}
+	
 
    }
  }
 }
+if (!res) res = kill(position[from],from, to);
 
  
  return res;
@@ -214,18 +216,36 @@ function highlight(board, move)
 	}
  }
 
+ 
 
-// function rules(i, j, pawn) {
-//   if (pawn == "white")
-//   {
-//  if (i>j) return false;
-//  else if (i == j) return false;
-//  else return true; 
-//   }
-//   else if (pawn == "black")
-//   {
-//     if (i<j) return false;
-//  else if (i == j) return false;
-//  else return true; 
-//   }
-// }
+ function kill(player, from, to) {
+   var opponent = 0;
+   var res;
+    var line = []
+ line[0] = [1,2,3,4];
+ line[1] = [5,6,7,8];
+ line[2] = [9,10,11,12];
+ line[3] = [13,14,15,16];
+ line[4] = [17,18,19,20];
+ line[5] = [21,22,23,24];
+ line[6] = [25,26,27,28];
+ line[7] = [29,30,31,32];
+
+ 
+ if (player == "white" && opponent == "black")
+ {
+  alert("legal kill");
+  res = true;
+ }
+ else if(player == "black" && opponent == "white" )
+ {
+  alert ("legal kill"); 
+  res = true;
+ }
+ else 
+ {
+   alert("illegal moved!");
+   res = false;
+ }
+ return res;
+ }
