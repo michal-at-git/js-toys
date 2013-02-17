@@ -234,21 +234,37 @@ function highlight(board, move)
 
  var opponent = position[to];
 alert(to);
+
+var pin = [0,0], pto = [0,0], pbetween = [0,0];
+
+
+for(x = 0; x<= 7; x++)
+  {
+   for(y = 0; y <= 3; y++)
+   {    
+     if(from == line[x][y])
+     {
+      pin[0] = x;
+      pin[1] = y;
+     }
+     else if (to == line[x][y]) 
+     {
+       pto[0] = x;
+       pto[1] = y;
+     }
+   }
+  }
+  
+  pbetween[0]
  
- if (player == "white" && opponent == "black")
+ if (player == "white" /*&& opponent == "black"*/ )
  {
-//   for(x = 0; x<= 7; x++)
-//   {
-//    for(y = 0; y <= 3; y++)
-//    {
-//      
-//    }
-//   }
+  
     
   alert("legal kill");
   res = true;
  }
- else if(player == "black" && opponent == "white" )
+ else if(player == "black" /*&& opponent == "white"*/)
  {
   alert ("legal kill"); 
   res = true;
@@ -258,5 +274,7 @@ alert(to);
    alert("illegal moved!");
    res = false;
  }
+ alert(pto[0]);
+ alert(pto[1]);
  return res;
  }
