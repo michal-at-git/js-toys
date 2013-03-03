@@ -13,7 +13,7 @@ var position = [ /*aa*/null, /*ca*/ null, /*ea*/ null,/*ga*/ null, /*bb*/null, /
 	     ]
 function start() {
    var i = 0;
-  while (i < 8)
+  while (i < 12)
   { position[i] = "white";
     position[31-i] = "black"; 
 
