@@ -117,21 +117,20 @@ if (pawn == "white")
       if ((from == line[x][y]) && (to == line[x+1][y]))  
       {
 	alert("legal move");
-
+	res = isbusy(position[to-1]);
 	x = 7;
-	res = true;
       }
       else if ((x%2) != 0 && (from == line[x][y]) && (to == line[x+1][y+1])) // not finished & not good
 	{
 	  alert("legal move");
+	  res = isbusy(position[to-1]);
 	  x = 7;
-	  res = true;
 	}
 	else if ((x%2) == 0 && (from == line[x][y]) && (to == line[x+1][y-1])) // not finished & not good
 	{
 	  alert("legal move");
+	  res = isbusy(position[to-1]);
 	  x = 7;
-	  res = true;
 	}
 	
    }
@@ -147,28 +146,27 @@ else if (pawn == "black")
       if ((from == line[x][y]) && (to == line[x-1][y]))  
       {
 	alert("legal move");
-
+	res = isbusy(position[to-1]);
 	x = 0;
-	res = true;
       }
       else if ((x%2) == 0 && (from == line[x][y]) && (to == line[x-1][y-1])) // UNSTABLE - NOT WORKING
 	{
 	  alert("legal move");
+	  res = isbusy(position[to-1]);
 	  x = 0;
-	  res = true;
 	}
 	else if ((x%2) != 0 && (from == line[x][y]) && (to == line[x-1][y+1])) // UNSTABLE - NOT WORKING
 	{
 	  alert("legal move");
+	  res = isbusy(position[to-1]);
 	  x = 0;
-	  res = true;
 	}
 	
 
    }
  }
 }
-if (!res) res = kill(position[from],from, to);
+//if (!res) res = kill(position[from],from, to);
 
  
  return res;
@@ -217,64 +215,75 @@ function highlight(board, move)
  }
 
  
+function isbusy(arg)
+{
+ if (arg != null)
+ {
+   alert("busy: "+arg); 
+   return false;
+ }
+ else return true;
+}
 
- function kill(player, from, to) {
-   var res;
-   var x;
-   var y;
-    var line = []
- line[0] = [1,2,3,4];
- line[1] = [5,6,7,8];
- line[2] = [9,10,11,12];
- line[3] = [13,14,15,16];
- line[4] = [17,18,19,20];
- line[5] = [21,22,23,24];
- line[6] = [25,26,27,28];
- line[7] = [29,30,31,32];
-
- var opponent = position[to];
-alert(to);
-
-var pin = [0,0], pto = [0,0], pbetween = [0,0];
-
-
-for(x = 0; x<= 7; x++)
-  {
-   for(y = 0; y <= 3; y++)
-   {    
-     if(from == line[x][y])
-     {
-      pin[0] = x;
-      pin[1] = y;
-     }
-     else if (to == line[x][y]) 
-     {
-       pto[0] = x;
-       pto[1] = y;
-     }
-   }
-  }
-  
-  pbetween[0]
  
- if (player == "white" /*&& opponent == "black"*/ )
- {
-  
-    
-  alert("legal kill");
-  res = true;
- }
- else if(player == "black" /*&& opponent == "white"*/)
- {
-  alert ("legal kill"); 
-  res = true;
- }
- else 
- {
-   alert("illegal moved!");
-   res = false;
- }
- alert(pto[0]);
- alert(pto[1]);
- return res;
- }
+ 
+//  function kill(player, from, to) {
+//    var res;
+//    var x;
+//    var y;
+//     var line = []
+//  line[0] = [1,2,3,4];
+//  line[1] = [5,6,7,8];
+//  line[2] = [9,10,11,12];
+//  line[3] = [13,14,15,16];
+//  line[4] = [17,18,19,20];
+//  line[5] = [21,22,23,24];
+//  line[6] = [25,26,27,28];
+//  line[7] = [29,30,31,32];
+// 
+//  var opponent = position[to];
+// alert(to);
+// 
+// var pin = [0,0], pto = [0,0], pbetween = [0,0];
+// 
+// 
+// for(x = 0; x<= 7; x++)
+//   {
+//    for(y = 0; y <= 3; y++)
+//    {    
+//      if(from == line[x][y])
+//      {
+//       pin[0] = x;
+//       pin[1] = y;
+//      }
+//      else if (to == line[x][y]) 
+//      {
+//        pto[0] = x;
+//        pto[1] = y;
+//      }
+//    }
+//   }
+//   
+//   pbetween[0]
+//  
+//  if (player == "white" /*&& opponent == "black"*/ )
+//  {
+//   
+//     
+//   alert("legal kill");
+//   res = true;
+//  }
+//  else if(player == "black" /*&& opponent == "white"*/)
+//  {
+//   alert ("legal kill"); 
+//   res = true;
+//  }
+//  else 
+//  {
+//    alert("illegal moved!");
+//    res = false;
+//  }
+//  alert(pto[0]);
+//  alert(pto[1]);
+//  return res;
+//  }
