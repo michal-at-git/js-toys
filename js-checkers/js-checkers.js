@@ -79,6 +79,7 @@ function checkers(inpt)
 	  move = 0; 
 	  highlight(board[i], move);
 	  j = 0;
+	  i = 0;
    }
  }
 
