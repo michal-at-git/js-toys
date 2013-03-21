@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <title>Draw rectangle</title>
+  <script>
+    function rect() {
+      var x = document.getElementById('width');
+      var x = x.value;
+      var y = document.getElementById('height');
+      var y = y.value;
+      var c = document.getElementById('color');
+      var c = c.value;
+      document.getElementById('model').style.width = x+'px';
+      document.getElementById('model').style.height = y+'px';
+      document.getElementById('model').style.background = c;
+
+    }
+ </script>
+ <style>
+  label {display: block;}
+  </style>
+</head>
+<body>
+
+<div id="model">
+</div>
+  <form>
+    <label>Width: <input type="text" id="width" value=""/></label>
+    <label>Height: <input type="text" id="height" value="" /></label>
+    <input type="color" id="color" value="#ffffff" />
+    <input type="button" onClick="rect()" value="Draw rectangle"/>
+  </form>
+</body>
