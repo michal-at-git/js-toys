@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Dice random</title>
+  <script>
+    function dicerand() {
+     var x = (Math.floor(Math.random() * 6)+1);
+      put = ["<div class='element'>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br/>&ensp;&ensp;&ensp;*&ensp;&ensp;&ensp;<br/>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br/></div>",
+      "<div class='element'>*&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br/>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br/>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;*<br/></div>",
+      "<div class='element'>*&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br/>&ensp;&ensp;&ensp;*&ensp;&ensp;&ensp;<br/>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;*<br/></div>",
+      "<div class='element'>*&ensp;&ensp;&ensp;&ensp;&ensp;*<br/>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<br/>*&ensp;&ensp;&ensp;&ensp;&ensp;*<br/></div>",
+      "<div class='element'>*&ensp;&ensp;&ensp;&ensp;&ensp;*<br/>&ensp;&ensp;&ensp;*&ensp;&ensp;&ensp;<br/>*&ensp;&ensp;&ensp;&ensp;&ensp;*<br/></div>",
+      "<div class='element'>*&ensp;&ensp;&ensp;&ensp;&ensp;*<br/>*&ensp;&ensp;&ensp;&ensp;&ensp;*<br/>*&ensp;&ensp;&ensp;&ensp;&ensp;*</div>"];
+
+
+      document.getElementById('dice').innerHTML = put[x-1];
+    }
+  </script>
+  <style>
+    #dice {width: 150px;
+	height: 150px;
+	border: solid #ff9000 4px;
+	border-radius: 7px 7px;
+	display: table;
+	margin-bottom: 50px;
+      }
+    .element {
+    width: 120px; margin: 0 auto;
+    line-height: 50px;
+    height: 130px;
+    display: table;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    }
+      
+  </style>
+</head>
+<body>
+  <div id="dice">
+  </div>
+  <a onclick="dicerand()" style="border: solid #111 1px; padding: 2px; cursor: pointer">Rand...</a>
+</body>
+</html>
