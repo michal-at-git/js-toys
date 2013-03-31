@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <title>Circle on canvas ;)</title>
+  <script>
+    function draw() {
+
+	var bordsize = document.getElementById('bdsize');
+	var bordcol = document.getElementById('bdcol');
+	var rad = document.getElementById('crad');
+	var bg = document.getElementById('bgclr');
+
+	bordsize = bordsize.value;
+	bordcol = bordcol.value;
+	rad = rad.value;
+	bg = bg.value;
+
+
+	var circ = document.getElementById('circle').getContext('2d');
+
+	circ.clearRect(0,0, 600, 600);
+
+
+	circ.beginPath();
+	circ.strokeStyle = bordcol;
+	circ.fillStyle = bg;
+	circ.lineWidth = bordsize;
+	circ.arc(300, 300, rad, 0, 2 * Math.PI, false);
+	circ.fill();
+	circ.stroke();
+	
+
+	document.getElementById('rpx').innerHTML = rad;
+	document.getElementById('bpx').innerHTML = bordsize;
+    }
+  </script>
+</head>
+<body onload="draw()">
+  <canvas width="600" height="600" id="circle">Upgrade your browser</canvas>
+
+  <form onmousemove="draw()">
+    <label>Radius: <input type="range" id="crad" value="10" min="10" max="100" step="10" /> <span id="rpx"></span>px</label><br/>
+    <label>Border color: <input type="color" id="bdcol" value="#ff7700" /></label><br/>
+    <label>Border size: <input type="range" id="bdsize" value="1" min="1" max="7" step="1" /> <span id="bpx"></span>px</label><br/>
+    <label>Background color: <input type="color" id="bgclr" value="#ffff00" /></label>
+  </form>
+</body>
+</html>
