@@ -46,30 +46,33 @@ var to = {"x":false, "y":false};
 
 ////////////////////// <checkers()>
 function checkers(py, px)
-{ alert(px+", "+py)
-
-  if(whitemv && position[py][px] && !from["x"] && !from["y"]) {
-    
-	alert("legal move for white"); //debug
-	alert("from"); //debug
+{ //alert(px+", "+py)
+  if(position[py][px] && !from["x"] && !from["y"]) {
+    alert("if(position[py][px]"+position[py][px])
 
 	from["x"] = px;
 	from["y"] = py;
     }
-    
-    else if (from["x"] && from["y"])
+    else if (from["x"] && from["y"] && !to["x"] && !to["y"])
     {
       to["x"] = px;
       to["y"] = py;
-      if(whitemv) {
+      if(whitemv) { alert("white");
 	mv("white");
 	whitemv = false;
       }
-      else {
+      else { alert("black");
 	mv("black"); 
-	whitemb = true;
+	whitemv = true;
       }
+     
+      
+
     }
+    else {
+	from["x"] = from["y"] = to["x"] = to["y"] = false; 
+	alert("bad move!");
+      }
 //     else {    alert("to"); //debug
 // 
 //       to["x"] = px;
@@ -87,7 +90,6 @@ function checkers(py, px)
 //   }
   
   highlight(px,py);
- 
 }
 
 
@@ -97,11 +99,23 @@ function checkers(py, px)
 
 //will be renamed to move()! conflict with wariable name ;P
 function mv(pawn) {
- //lines
- 
+ //lines 
+ alert("mv()")
+ if(pawn=="black") {
+   0;
+ }
+ else if (pawn == "white") {
+   if((from["x"] == to["x"] && to["y"]== (1 + from["y"])) || (from["x"] == (to["x"]-1) && to["y"]== (1 + from["y"])) ) {
+      position[from["y"]][from["x"]] = false;
+      position[to["y"]][to["x"]] = "white";
+
+   }
+ }
  
 //finnaly: 
 from["x"] = from["y"] = to["x"] = to["y"] = false; 
+ refresh();
+
  
 /*
  from += 1;
@@ -191,18 +205,19 @@ else if (pawn == "black")
 
 
 function refresh() {
-  var x;
-  for (x = 0; x < 32; x++)
-  {
-    if (position[x] == "white")
-       document.getElementById(board[x]).innerHTML = "&#x25cf;";
-    else if (position[x] == "black")
+  for (var uy = 0; uy < 8; uy++)
+   for (var ux = 0; ux < 4; ux++)
+  { 
+    if (position[uy][ux] == "white")
+       document.getElementById(board[uy][ux]).innerHTML = "&#x25cf;";
+    else if (position[uy][ux] == "black")
     {
-       document.getElementById(board[x]).innerHTML = "&#x25cb;";
+       document.getElementById(board[uy][ux]).innerHTML = "&#x25cb;";
     }
-    else  document.getElementById(board[x]).innerHTML = "";
+    else  document.getElementById(board[uy][ux]).innerHTML = "";
   }
 }
+
 
 function highlight(px, py)
  { alert(board[py][px]);
