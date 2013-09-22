@@ -21,22 +21,22 @@ var x=0; var y=0;
 function start() {
   while (y < 3) {
     while(x<4)
-      { /*position[i] = "white";
-	position[31-i] = "black"; */
-
-    document.getElementById(board[y][x]).innerHTML = "&#x25cf;";
-    document.getElementById(board[7-y][x]).innerHTML = "&#x25cb;";
-      ++x;
-      
+      { 
+	document.getElementById(board[y][x]).innerHTML = "&#x25cf;"; //white
+ 	document.getElementById(board[7-y][x]).innerHTML = "&#x25cb;"; //black
+	position[y][x] = "&#x25cf;"; //white
+	position[7-y][x] = "&#x25cb;"; //black
+	++x;      
       }
       x = 0;
       ++y;
   }
 }
-var move = 0;
-var _in = 0;
-var _out = 0;
-var i = 0, j = 0;
+var whitemv = true; // white first
+var move = {"from":false, "to":false}
+// var _in = 0;
+// var _out = 0;
+// var i = 0, j = 0;
 
 
 
@@ -44,9 +44,23 @@ var i = 0, j = 0;
 
 
 ////////////////////// <checkers()>
-function checkers(inpt)
-{ 
- 
+function checkers(py, px)
+{ alert(px+", "+py)
+
+  if(whitemv) {
+    alert("legal move for white"); //debug
+   whitemv=false;
+
+  }
+  else {
+    
+   alert("legal move for black"); //debug
+   whitemv=true;
+  
+  }
+  
+  highlight(px,py);
+ /*
  if (move == 0) {
    alert("move == 0"); /////////////////////////
    while (board[i] != inpt) {
@@ -95,7 +109,7 @@ function checkers(inpt)
 
    
  
- return 0;
+ return 0;*/
 }
 
 
@@ -206,23 +220,29 @@ function refresh() {
   }
 }
 
-function highlight(board, move)
- {
- if (move == 1)
- {
-    var light = document.getElementById(board);
+function highlight(px, py)
+ { alert(board[py][px]);
+    var light = document.getElementById(board[py][px]);
     with (light.style) 
     {
 	borderColor = 'red';
     }
- }
-    else{ 
-	var light = document.getElementById(board);
-	with (light.style) 
-	    {
-	      borderColor = '#000000';
-	    }
-	}
+   
+//  if (move == 1)
+//  {
+//     var light = document.getElementById(board[py][px]);
+//     with (light.style) 
+//     {
+// 	borderColor = 'red';
+//     }
+//  }
+//     else{ 
+// 	var light = document.getElementById(board);
+// 	with (light.style) 
+// 	    {
+// 	      borderColor = '#000000';
+// 	    }
+// 	}
  }
 
  
