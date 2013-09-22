@@ -1,26 +1,36 @@
-var position = [ /*aa*/null, /*ca*/ null, /*ea*/ null,/*ga*/ null, /*bb*/null, /*db*/null, /*fb*/null, /*hb*/null, 
-  /*ac*/null, /*cc*/null, /*ec*/null, /*gc*/null, /*bd*/null, /*dd*/null, /*fd*/null, 
-  /*hd*/null, null, null, null, null, null, null,
-  null, null, null, null, null, null, null, null, null, null];
-  var board = ['aa', 'ca', 'ea', 'ga', 
-	      'bb', 'db', 'fb', 'hb',
-	      'ac', 'cc', 'ec', 'gc', 
-	      'bd', 'dd', 'fd', 'hd', 
-	      'ae', 'ce', 'ee', 'ge', 
-	      'bf', 'df', 'ff', 'hf', 
-	      'ag', 'cg', 'eg', 'gg',
-	      'bh', 'dh', 'fh', 'hh',
-	     ]
+var position = [[false, false, false, false],
+	      [false, false, false,false],
+	      [false, false, false,false],
+	      [false, false, false,false],
+	      [false, false, false,false],
+	      [false, false, false,false],
+	      [false, false, false,false],
+	      [false, false, false,false]
+	      ];
+	      
+  var board = [['aa', 'ca', 'ea', 'ga'], 
+	      ['bb', 'db', 'fb', 'hb'],
+	      ['ac', 'cc', 'ec', 'gc'], 
+	      ['bd', 'dd', 'fd', 'hd'], 
+	      ['ae', 'ce', 'ee', 'ge'], 
+	      ['bf', 'df', 'ff', 'hf'], 
+	      ['ag', 'cg', 'eg', 'gg'],
+	      ['bh', 'dh', 'fh', 'hh']
+	     ];
+var x=0; var y=0;	     
 function start() {
-   var i = 0;
-  while (i < 12)
-  { position[i] = "white";
-    position[31-i] = "black"; 
+  while (y < 3) {
+    while(x<4)
+      { /*position[i] = "white";
+	position[31-i] = "black"; */
 
- document.getElementById(board[i]).innerHTML = "&#x25cf;";
- document.getElementById(board[31-i]).innerHTML = "&#x25cb;";
-  
- ++i;
+    document.getElementById(board[y][x]).innerHTML = "&#x25cf;";
+    document.getElementById(board[7-y][x]).innerHTML = "&#x25cb;";
+      ++x;
+      
+      }
+      x = 0;
+      ++y;
   }
 }
 var move = 0;
