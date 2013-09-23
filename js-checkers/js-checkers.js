@@ -45,10 +45,14 @@ var to = {"x":false, "y":false};
 function checkers(py, px)
 { //alert(px+", "+py)
   if(position[py][px] && !from["x"] && !from["y"]) {
-    alert("if(position[py][px]"+position[py][px])
+      if((whitemv && position[py][px] == "white") || (!whitemv && position[py][px] == "black")) 
+	{
+	alert("if(position[py][px]"+position[py][px])
 
-	from["x"] = px;
-	from["y"] = py;
+	    from["x"] = px;
+	    from["y"] = py;
+	}
+	else alert("wrong move");
     }
     else if (from["x"] && from["y"] && !to["x"] && !to["y"])
     {
