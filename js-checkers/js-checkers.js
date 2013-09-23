@@ -97,7 +97,9 @@ function mv(pawn) {
 
    }
  }
- 
+ else if (pawn == "black") {
+   0;
+ }
 //finnaly: 
 from["x"] = from["y"] = to["x"] = to["y"] = false; 
  refresh();
@@ -136,4 +138,8 @@ function highlight(px, py)
     }
    
  }
+
  
+// start game :)
+
+window.onload = start
