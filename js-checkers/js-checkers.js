@@ -43,40 +43,38 @@ var to = {"x":false, "y":false};
 
 ////////////////////// <checkers()>
 function checkers(py, px)
-{ //alert(px+", "+py)
+{ alert(px+", "+py)
   if(position[py][px] && !from["x"] && !from["y"]) {
       if((whitemv && position[py][px] == "white") || (!whitemv && position[py][px] == "black")) 
 	{
-	alert("if(position[py][px]"+position[py][px])
+	//alert("if(position[py][px]"+position[py][px])
 
 	    from["x"] = px;
 	    from["y"] = py;
 	}
 	else alert("wrong move");
     }
-    else if (from["x"] && from["y"] && !to["x"] && !to["y"])
+    else /*if (from["x"] && from["y"] && !to["x"] && !to["y"])*/
     {
-      to["x"] = px;
-      to["y"] = py;
-      if(whitemv) { alert("white");
-	mv("white");
-	whitemv = false;
-      }
-      else { alert("black");
-	mv("black"); 
-	whitemv = true;
-      }
-     
-      
-
+	to["x"] = px;
+	to["y"] = py;
+	if(whitemv) { alert("white");
+	  mv("white");
+	  whitemv = false;
+	}
+	else { alert("black");
+	  mv("black"); 
+	  whitemv = true;
+	}
     }
-    else {
-	from["x"] = from["y"] = to["x"] = to["y"] = false; 
-	alert("bad move!");
-      }
+//     else {alert("from[x]:"+from["x"]+" from[y]"+from["y"]+" ;; to[x]: "+to["x"]+" to[\"y\"]"+to["y"])
+// 
+// 	from["x"] = from["y"] = to["x"] = to["y"] = false; 
+// 	alert("wrong move! --unn");
+//       }
 
   
-  highlight(px,py);
+//   highlight(px,py);
 }
 
 
@@ -87,18 +85,20 @@ function checkers(py, px)
 function mv(pawn) {
  //lines 
  alert("mv()")
- if(pawn=="black") {
-   0;
- }
- else if (pawn == "white") {
-   if((from["x"] == to["x"] && to["y"]== (1 + from["y"])) || (from["x"] == (to["x"]-1) && to["y"]== (1 + from["y"])) ) {
+
+ if (pawn == "white") {
+   if(to["y"] == (from["y"]+1) && (to["x"] == from["x"] || to["x"] == (from["x"]-1))) {
       position[from["y"]][from["x"]] = false;
       position[to["y"]][to["x"]] = "white";
 
    }
  }
- else if (pawn == "black") {
-   0;
+ else if (pawn == "black") { 
+   if(to["y"] == (from["y"]-1) && (to["x"] == from["x"] || to["x"] == (from["x"]+1))) 
+   { 
+     position[from["y"]][from["x"]] = false;
+     position[to["y"]][to["x"]] = "black";
+   }
  }
 //finnaly: 
 from["x"] = from["y"] = to["x"] = to["y"] = false; 
