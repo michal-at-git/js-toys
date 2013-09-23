@@ -60,11 +60,11 @@ function checkers(py, px)
 	to["y"] = py;
 	if(whitemv) { alert("white");
 	  mv("white");
-	  whitemv = false;
+	  whitemv = false; //move to mv() 
 	}
 	else { alert("black");
 	  mv("black"); 
-	  whitemv = true;
+	  whitemv = true; //move to mv() 
 	}
     }
 //     else {alert("from[x]:"+from["x"]+" from[y]"+from["y"]+" ;; to[x]: "+to["x"]+" to[\"y\"]"+to["y"])
@@ -86,20 +86,52 @@ function mv(pawn) {
  //lines 
  alert("mv()")
 
- if (pawn == "white") {
+ if (pawn == "white" && !position[to["y"]][to["x"]]) {
    if(to["y"] == (from["y"]+1) && (to["x"] == from["x"] || to["x"] == (from["x"]-1))) {
       position[from["y"]][from["x"]] = false;
       position[to["y"]][to["x"]] = "white";
 
    }
+    //<kill>
+  else if (to["y"] == (from["y"]+2) && to["x"] == (from["x"]-1)) 
+    {
+      if(position[from["y"]+1][from["x"]-1] == "black") {
+	position[from["y"]][from["x"]] = false;
+	position[from["y"]+1][from["x"]-1] = false;
+	position[to["y"]][to["x"]] = "white";
+    }
+    else if(position[from["y"]+1][from["x"]] == "black") {
+      position[from["y"]][from["x"]] = false;
+      position[from["y"]+1][from["x"]] = false;
+      position[to["y"]][to["x"]] = "white";
+    }
+    
+    
+  }
+  else if (to["y"] == (from["y"]+2) && to["x"] == (from["x"]+1)) {
+   if(position[from["y"]+1][from["x"]+1] == "black") {
+      position[from["y"]][from["x"]] = false;
+      position[from["y"]+1][from["x"]+1] = false;
+      position[to["y"]][to["x"]] = "white";
+   }
+   else if(position[from["y"]+1][from["x"]] == "black") {
+      position[from["y"]][from["x"]] = false;
+      position[from["y"]+1][from["x"]] = false;
+      position[to["y"]][to["x"]] = "white";
+   }
+  }
+ //</kill>
+   
  }
- else if (pawn == "black") { 
+
+ else if (pawn == "black" && !position[to["y"]][to["x"]]) { 
    if(to["y"] == (from["y"]-1) && (to["x"] == from["x"] || to["x"] == (from["x"]+1))) 
    { 
      position[from["y"]][from["x"]] = false;
      position[to["y"]][to["x"]] = "black";
    }
  }
+ else alert("not") //DEBUG
 //finnaly: 
 from["x"] = from["y"] = to["x"] = to["y"] = false; 
  refresh();
