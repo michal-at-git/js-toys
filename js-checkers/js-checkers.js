@@ -130,6 +130,35 @@ function mv(pawn) {
      position[from["y"]][from["x"]] = false;
      position[to["y"]][to["x"]] = "black";
    }
+   //<kill>
+   else if (to["y"] == (from["y"]-2) && to["x"] == (from["x"]+1)) 
+    {
+      if(position[from["y"]-1][from["x"]+1] == "white") {
+	position[from["y"]][from["x"]] = false;
+	position[from["y"]-1][from["x"]+1] = false;
+	position[to["y"]][to["x"]] = "black";
+    }
+    else if(position[from["y"]-1][from["x"]] == "white") {
+      position[from["y"]][from["x"]] = false;
+      position[from["y"]-1][from["x"]] = false;
+      position[to["y"]][to["x"]] = "black";
+    }
+    
+    
+  }
+  else if (to["y"] == (from["y"]-2) && to["x"] == (from["x"]-1)) {
+   if(position[from["y"]-1][from["x"]-1] == "white") {
+      position[from["y"]][from["x"]] = false;
+      position[from["y"]-1][from["x"]-1] = false;
+      position[to["y"]][to["x"]] = "black";
+   }
+   else if(position[from["y"]-1][from["x"]] == "white") {
+      position[from["y"]][from["x"]] = false;
+      position[from["y"]-1][from["x"]] = false;
+      position[to["y"]][to["x"]] = "black";
+   }
+   //</kill>
+ }
  }
  else alert("not") //DEBUG
 //finnaly: 
