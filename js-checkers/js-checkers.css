@@ -1,36 +1,37 @@
 .js-checkers {border: solid #000 2px;
-    width: 288px;
+    width: 576px;
     display: table;
     box-shadow: 0px 0px 7px 0px #000;
 }
-.js-checkers p input {width: 30px;
-  height:30px;
+.js-checkers p input {width: 60px;
+  height:60px;
   margin: 0px;
   float: left;
   border: 0px;
   color: #fff;
-  font-size: 20px;
+  font-size: 40px;
 }
-.js-checkers  {width: 288px;
+.js-checkers  {width: 576px;
 margin: 0px;
 color: red;
-line-height: 30px;
-    font-size: 25px;
+line-height: 60px;
+    font-size: 70px;
+    font-family: Arial, sans-serif;
     font-weight: bold;
     text-align: center;
 }
 
 .js-checkers .black {background: #000;
-    border: solid #000 3px;
-    width: 30px;
-    height: 30px;
+    border: solid #000 6px;
+    width: 60px;
+    height: 60px;
     float: left;
     cursor: pointer;
 }
 .js-checkers .white {background: #fff;
-    border: solid #fff 3px;
-    width: 30px;
-    height: 30px;
+    border: solid #fff 6px;
+    width: 60px;
+    height: 60px;
     float: left;
     
 }
